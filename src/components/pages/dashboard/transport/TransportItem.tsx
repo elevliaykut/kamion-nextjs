@@ -77,7 +77,7 @@ const TransportItem: React.FC<TransportItemProps> = ({
             >
               Ofis,
             </span>
-            {shipment.departure_address.city.name}
+            {shipment?.departure_address?.city?.name}
           </span>
           <span className="inline-flex items-center gap-1">
             <span className="border-border-checkbox block size-2.5 rounded-full border" />{' '}
@@ -89,7 +89,7 @@ const TransportItem: React.FC<TransportItemProps> = ({
             >
               Fabrika,
             </span>
-            {shipment.delivery_address.city.name}
+            {shipment?.delivery_address?.city?.name}
           </span>
         </Typography>
       </TableCell>
@@ -137,7 +137,7 @@ const TransportItem: React.FC<TransportItemProps> = ({
       </TableCell>
       <TableCell className="w-32">
         <TransportStatus
-          variant={convertApiStatusToUiStatus(shipment.latest_status.type)}
+          variant={convertApiStatusToUiStatus(shipment?.latest_status?.type)}
         />
       </TableCell>
     </TableRow>
